@@ -24,4 +24,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/admin', function () {
+    return Inertia::render('FarmerManagementSystem/Dashboard/Overview');
+});
+
+Route::get('/upload', function () {
+    return Inertia::render('FarmerManagementSystem/Upload/Upload'); // Adjust path as per your directory
+})->name('upload');
+
 require __DIR__.'/auth.php';
